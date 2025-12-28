@@ -1,17 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
-import ScrollNavigation from "./components/ScrollNavigation";
-import Hero from "./components/Hero";
-import Testimonials from "./components/Testimonials";
-import Products from "./components/Products";
-import Founders from "./components/Founders";
 import Footer from "./components/Footer";
-import Problem from "./components/Problem";
-import Contact from "./components/Contact";
+import LandingPage from "./pages/LandingPage";
+import ProductPage from "./pages/ProductPage";
+import UseCasesPage from "./pages/UseCasesPage";
+import WhyWeBuiltThisPage from "./pages/WhyWeBuiltThisPage";
+import TeamPage from "./pages/TeamPage";
+import TechnologyVisionPage from "./pages/TechnologyVisionPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
-	const [currentSection, setCurrentSection] = useState(0);
-
 	useEffect(() => {
 		const observerOptions = {
 			threshold: 0.1,
@@ -34,92 +33,24 @@ function App() {
 			observer.observe(el);
 		});
 
-		const sections = document.querySelectorAll(".scroll-section");
-		const sectionObserver = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						const index = Array.from(sections).indexOf(entry.target);
-						setCurrentSection(index);
-					}
-				});
-			},
-			{ threshold: 0.5 },
-		);
-
-		sections.forEach((section) => sectionObserver.observe(section));
-
 		return () => {
 			observer.disconnect();
-			sectionObserver.disconnect();
 		};
 	}, []);
 
-	const smoothScroll = (e, target) => {
-		e.preventDefault();
-		const element = document.querySelector(target);
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth", block: "start" });
-		}
-	};
-
-	const scrollToNext = () => {
-		const sections = document.querySelectorAll(".scroll-section");
-		const nextIndex = Math.min(currentSection + 1, sections.length - 1);
-		sections[nextIndex]?.scrollIntoView({ behavior: "smooth", block: "start" });
-	};
-
 	return (
 		<div className="scroll-smooth">
-			<Navigation smoothScroll={smoothScroll} />
-
-			<div className="scroll-section relative" id="hero">
-				<Hero />
-				<div className="absolute bottom-8 left-1/2 z-100 -translate-x-1/2 animate-bounce">
-					<button
-						onClick={scrollToNext}
-						className="flex h-12 w-12 items-center justify-center rounded-full border backdrop-blur-sm transition-all hover:scale-110 hover:shadow-lg"
-						style={{
-							borderColor: 'var(--color-borderLight)',
-							backgroundColor: 'var(--color-surface)'
-						}}
-						onMouseEnter={(e) => {
-							e.currentTarget.style.borderColor = 'var(--color-primary)';
-							e.currentTarget.style.boxShadow = '0 0 20px var(--color-shadow)';
-						}}
-						onMouseLeave={(e) => {
-							e.currentTarget.style.borderColor = 'var(--color-borderLight)';
-							e.currentTarget.style.boxShadow = 'none';
-						}}
-						aria-label="Scroll to next section"
-					>
-						<span className="text-2xl" style={{ color: 'var(--color-text)' }}>↓</span>
-					</button>
-				</div>
-			</div>
-
-			<div className="scroll-section" id="testimonials">
-				<Testimonials />
-			</div>
-
-			<div className="scroll-section" id="problem">
-				<Problem />
-			</div>
-
-			<div className="scroll-section" id="products">
-				<Products />
-			</div>
-
-			<div className="scroll-section" id="founders">
-				<Founders />
-			</div>
-
-			<div className="scroll-section" id="contact">
-				<Contact />
-			</div>
+			<Navigation />
+			<Routes>
+				<Route path="/" element={<LandingPage />} />
+				<Route path="/product" element={<ProductPage />} />
+				<Route path="/use-cases" element={<UseCasesPage />} />
+				<Route path="/why-we-built-this" element={<WhyWeBuiltThisPage />} />
+				<Route path="/team" element={<TeamPage />} />
+				<Route path="/technology-vision" element={<TechnologyVisionPage />} />
+				<Route path="/contact" element={<ContactPage />} />
+			</Routes>
 			<Footer />
-
-			<ScrollNavigation currentSection={currentSection} />
 		</div>
 	);
 }

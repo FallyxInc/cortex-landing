@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
 import { hexToRgba } from "../utils/colorUtils";
 
-const Navigation = ({ smoothScroll }) => {
+const Navigation = () => {
 	const { colors } = useTheme();
+	const location = useLocation();
 	const [isScrolled, setIsScrolled] = useState(false);
 
 	useEffect(() => {
@@ -14,13 +16,23 @@ const Navigation = ({ smoothScroll }) => {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
+	const navItems = [
+		{ path: "/", label: "Home" },
+		{ path: "/product", label: "Product" },
+		{ path: "/use-cases", label: "Use Cases" },
+		{ path: "/why-we-built-this", label: "Why" },
+		{ path: "/team", label: "Team" },
+		{ path: "/technology-vision", label: "Vision" },
+		{ path: "/contact", label: "Contact" },
+	];
+
+	const isActive = (path) => {
+		return location.pathname === path;
+	};
+
 	return (
 		<nav
-			className={`fixed top-5 left-1/2 z-999 -translate-x-1/2 rounded-xl border backdrop-blur-sm transition-all duration-700 ease-in-out ${
-				isScrolled
-					? "px-8 py-2 "
-					: "px-8 py-2 "
-			} `}
+			className={`fixed top-5 left-1/2 z-999 -translate-x-1/2 rounded-xl border backdrop-blur-sm transition-all duration-700 ease-in-out px-4 py-2 md:px-8`}
 			style={{ 
 				borderColor: colors.borderLight, 
 				backgroundColor: hexToRgba(colors.surface, 0.8) 
@@ -28,53 +40,24 @@ const Navigation = ({ smoothScroll }) => {
 		>
 			<div
 				className={`flex items-center justify-center transition-all duration-500 ease-out ${
-					isScrolled ? "gap-3 sm:gap-4 md:gap-6" : "gap-6 sm:gap-8 md:gap-12"
+					isScrolled ? "gap-2 sm:gap-3 md:gap-4" : "gap-3 sm:gap-4 md:gap-6"
 				} `}
 			>
-				<a
-					href="#hero"
-					onClick={(e) => smoothScroll(e, "#hero")}
-					className={`link-hover font-medium tracking-wide uppercase transition-all duration-500 ease-in-out hover:scale-110 ${isScrolled ? "text-xs sm:text-sm" : "text-sm sm:text-base"} `}
-					style={{ 
-						transitionProperty: "font-size, color, transform",
-						color: colors.textSecondary
-					}}
-				>
-					Home
-				</a>
-				<a
-					href="#testimonials"
-					onClick={(e) => smoothScroll(e, "#testimonials")}
-					className={`link-hover font-medium tracking-wide uppercase transition-all duration-500 ease-in-out hover:scale-110 ${isScrolled ? "text-xs sm:text-sm" : "text-sm sm:text-base"} `}
-					style={{ 
-						transitionProperty: "font-size, color, transform",
-						color: colors.textSecondary
-					}}
-				>
-					Testimonials
-				</a>
-				<a
-					href="#products"
-					onClick={(e) => smoothScroll(e, "#products")}
-					className={`link-hover font-medium tracking-wide uppercase transition-all duration-500 ease-in-out hover:scale-110 ${isScrolled ? "text-xs sm:text-sm" : "text-sm sm:text-base"} `}
-					style={{ 
-						transitionProperty: "font-size, color, transform",
-						color: colors.textSecondary
-					}}
-				>
-					Products
-				</a>
-				<a
-					href="#contact"
-					onClick={(e) => smoothScroll(e, "#contact")}
-					className={`link-hover font-medium tracking-wide uppercase transition-all duration-500 ease-in-out hover:scale-110 ${isScrolled ? "text-xs sm:text-sm" : "text-sm sm:text-base"} `}
-					style={{ 
-						transitionProperty: "font-size, color, transform",
-						color: colors.textSecondary
-					}}
-				>
-					Contact
-				</a>
+				{navItems.map((item) => (
+					<Link
+						key={item.path}
+						to={item.path}
+						className={`link-hover font-medium tracking-wide uppercase transition-all duration-500 ease-in-out hover:scale-110 ${
+							isScrolled ? "text-xs sm:text-sm" : "text-sm sm:text-base"
+						} ${isActive(item.path) ? "font-bold" : ""}`}
+						style={{ 
+							transitionProperty: "font-size, color, transform",
+							color: isActive(item.path) ? colors.primary : colors.textSecondary
+						}}
+					>
+						{item.label}
+					</Link>
+				))}
 			</div>
 		</nav>
 	);

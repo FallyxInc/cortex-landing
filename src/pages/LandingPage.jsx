@@ -164,7 +164,7 @@ const LandingPage = () => {
 								Ingests Data
 							</h3>
 							<p className="text-sm leading-relaxed" style={{ color: colors.textSecondary }}>
-								Connects to incident and operational data sources seamlessly.
+								Seamlessly integrates with PointClickCare and other incident and operational data sources.
 							</p>
 						</div>
 						<div

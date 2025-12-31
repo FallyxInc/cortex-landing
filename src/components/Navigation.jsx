@@ -22,7 +22,6 @@ const Navigation = () => {
 		{ path: "/use-cases", label: "Use Cases" },
 		{ path: "/why-we-built-this", label: "Why" },
 		{ path: "/team", label: "Team" },
-		{ path: "/technology-vision", label: "Vision" },
 		{ path: "/contact", label: "Contact" },
 	];
 

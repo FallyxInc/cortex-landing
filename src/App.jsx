@@ -7,7 +7,6 @@ import ProductPage from "./pages/ProductPage";
 import UseCasesPage from "./pages/UseCasesPage";
 import WhyWeBuiltThisPage from "./pages/WhyWeBuiltThisPage";
 import TeamPage from "./pages/TeamPage";
-import TechnologyVisionPage from "./pages/TechnologyVisionPage";
 import ContactPage from "./pages/ContactPage";
 
 function App() {
@@ -47,7 +46,6 @@ function App() {
 				<Route path="/use-cases" element={<UseCasesPage />} />
 				<Route path="/why-we-built-this" element={<WhyWeBuiltThisPage />} />
 				<Route path="/team" element={<TeamPage />} />
-				<Route path="/technology-vision" element={<TechnologyVisionPage />} />
 				<Route path="/contact" element={<ContactPage />} />
 			</Routes>
 			<Footer />

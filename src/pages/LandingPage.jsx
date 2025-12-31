@@ -80,6 +80,62 @@ const LandingPage = () => {
 				</div>
 			</section>
 
+			{/* Who It's For - Early placement for quick identification */}
+			<section className="px-4 py-16 md:px-8 md:py-24 lg:px-12 lg:py-32" style={{ backgroundColor: hexToRgba(colors.primaryLight, 0.05) }}>
+				<div className="mx-auto max-w-5xl">
+					<h2
+						className="animate-on-scroll mb-8 text-center text-4xl font-extrabold md:text-5xl"
+						style={{ color: colors.text }}
+					>
+						Built for Senior Care Operators
+					</h2>
+					<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+						<div
+							className="animate-on-scroll rounded-2xl border p-8 text-center transition-all duration-300 hover:scale-105"
+							style={{
+								backgroundColor: hexToRgba(colors.primary, 0.1),
+								borderColor: colors.border,
+							}}
+						>
+							<h3 className="mb-3 text-xl font-bold" style={{ color: colors.text }}>
+								Retirement Homes
+							</h3>
+							<p className="text-sm leading-relaxed" style={{ color: colors.textSecondary }}>
+								Independent and assisted living facilities looking to improve care quality and operational efficiency.
+							</p>
+						</div>
+						<div
+							className="animate-on-scroll rounded-2xl border p-8 text-center transition-all duration-300 hover:scale-105"
+							style={{
+								backgroundColor: hexToRgba(colors.primary, 0.1),
+								borderColor: colors.border,
+							}}
+						>
+							<h3 className="mb-3 text-xl font-bold" style={{ color: colors.text }}>
+								Long-Term Care Operators
+							</h3>
+							<p className="text-sm leading-relaxed" style={{ color: colors.textSecondary }}>
+								Operators managing long-term care facilities who need better incident analysis and compliance tracking.
+							</p>
+						</div>
+						<div
+							className="animate-on-scroll rounded-2xl border p-8 text-center transition-all duration-300 hover:scale-105"
+							style={{
+								backgroundColor: hexToRgba(colors.primary, 0.1),
+								borderColor: colors.border,
+							}}
+						>
+							<h3 className="mb-3 text-xl font-bold" style={{ color: colors.text }}>
+								Regional / Chain-Level Leadership
+							</h3>
+							<p className="text-sm leading-relaxed" style={{ color: colors.textSecondary }}>
+								Executives managing multiple facilities who need visibility across their entire operation.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			{/* The Problem - Three Clear Points */}
 			<section className="px-4 py-16 md:px-8 md:py-24 lg:px-12 lg:py-32">
 				<div className="mx-auto max-w-6xl">

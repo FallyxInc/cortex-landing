@@ -73,7 +73,7 @@ const TeamPage = () => {
 				</div>
 
 				{/* Focus Areas */}
-				<section className="rounded-3xl border p-8 md:p-12" style={{ borderColor: colors.border, backgroundColor: hexToRgba(colors.accent, 0.05) }}>
+				<section className="mb-24 rounded-3xl border p-8 md:p-12" style={{ borderColor: colors.border, backgroundColor: hexToRgba(colors.accent, 0.05) }}>
 					<h2
 						className="mb-8 text-center text-3xl font-extrabold md:text-4xl"
 						style={{ color: colors.text }}
@@ -109,6 +109,27 @@ const TeamPage = () => {
 								Proven ability to build and deliver technology solutions that solve real problems.
 							</p>
 						</div>
+					</div>
+				</section>
+
+				{/* Our Vision - Personal perspective from founders */}
+				<section className="rounded-3xl border p-8 md:p-12" style={{ borderColor: colors.border, backgroundColor: hexToRgba(colors.primaryLight, 0.05) }}>
+					<h2
+						className="mb-8 text-center text-3xl font-extrabold md:text-4xl"
+						style={{ color: colors.text }}
+					>
+						Our Vision
+					</h2>
+					<div className="mx-auto max-w-4xl space-y-6">
+						<p className="text-lg leading-relaxed" style={{ color: colors.textSecondary }}>
+							As founders of Ascenix, we believe senior care operators deserve better tools. We've seen firsthand how much time is wasted on manual analysis, how compliance gaps are missed until it's too late, and how reactive approaches lead to preventable incidents.
+						</p>
+						<p className="text-lg leading-relaxed" style={{ color: colors.textSecondary }}>
+							Our vision is simple: transform incident analysis from a time-consuming, reactive process into an automated, proactive system that actually prevents problems. We want to give operators the insights they need—when they need them—so they can focus on what matters most: providing excellent care.
+						</p>
+						<p className="text-lg leading-relaxed" style={{ color: colors.textSecondary }}>
+							We're building Ascenix to be the platform that reads the notes, spots the gaps, generates the tables, and delivers the reports—end to end. No buzzwords, no half-measures. Just tools that work.
+						</p>
 					</div>
 				</section>
 			</div>

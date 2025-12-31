@@ -112,8 +112,52 @@ const TeamPage = () => {
 					</div>
 				</section>
 
+				{/* Why We Built This - The Story */}
+				<section className="mb-24 rounded-3xl border p-8 md:p-12" style={{ borderColor: colors.border, backgroundColor: hexToRgba(colors.primaryLight, 0.05) }}>
+					<h2
+						className="mb-8 text-center text-3xl font-extrabold md:text-4xl"
+						style={{ color: colors.text }}
+					>
+						Why We Built This
+					</h2>
+					<div className="mx-auto max-w-4xl space-y-8">
+						<div>
+							<h3 className="mb-4 text-2xl font-bold" style={{ color: colors.text }}>
+								What We Saw Was Broken
+							</h3>
+							<p className="text-lg leading-relaxed" style={{ color: colors.textSecondary }}>
+								Senior care operators are drowning in data but starving for insights. Incident reports pile up, but no one has time to analyze patterns. Critical information lives in silos—PCC, staff notes, separate systems—making it impossible to see the full picture.
+							</p>
+						</div>
+						<div>
+							<h3 className="mb-4 text-2xl font-bold" style={{ color: colors.text }}>
+								Why Existing Tools Weren't Enough
+							</h3>
+							<p className="text-lg leading-relaxed" style={{ color: colors.textSecondary }}>
+								Traditional tools are reactive. They alert you after something happens, but they don't help you understand why it happened or how to prevent it. More dashboards don't solve the problem—operators need analysis, not more data to interpret.
+							</p>
+						</div>
+						<div>
+							<h3 className="mb-4 text-2xl font-bold" style={{ color: colors.text }}>
+								Why Analysis, Not Alerts
+							</h3>
+							<p className="text-lg leading-relaxed" style={{ color: colors.textSecondary }}>
+								Alerts tell you something happened. Analysis tells you why it happened and how to prevent it. We believe the future of senior care is predictive and preventive, not reactive. That requires understanding patterns across all data sources, not just monitoring individual metrics.
+							</p>
+						</div>
+						<div>
+							<h3 className="mb-4 text-2xl font-bold" style={{ color: colors.text }}>
+								Where We Believe Senior Care Is Heading
+							</h3>
+							<p className="text-lg leading-relaxed" style={{ color: colors.textSecondary }}>
+								The industry is moving toward data-driven, preventive care. Operators who can identify risks before they become incidents will provide better care, reduce costs, and improve outcomes. We're building the platform that makes that possible.
+							</p>
+						</div>
+					</div>
+				</section>
+
 				{/* Our Vision - Personal perspective from founders */}
-				<section className="rounded-3xl border p-8 md:p-12" style={{ borderColor: colors.border, backgroundColor: hexToRgba(colors.primaryLight, 0.05) }}>
+				<section className="rounded-3xl border p-8 md:p-12" style={{ borderColor: colors.border, backgroundColor: hexToRgba(colors.primary, 0.1) }}>
 					<h2
 						className="mb-8 text-center text-3xl font-extrabold md:text-4xl"
 						style={{ color: colors.text }}

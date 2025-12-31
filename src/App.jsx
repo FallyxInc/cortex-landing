@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import ProductPage from "./pages/ProductPage";
 import UseCasesPage from "./pages/UseCasesPage";
-import WhyWeBuiltThisPage from "./pages/WhyWeBuiltThisPage";
 import TeamPage from "./pages/TeamPage";
 import ContactPage from "./pages/ContactPage";
 
@@ -44,7 +43,6 @@ function App() {
 				<Route path="/" element={<LandingPage />} />
 				<Route path="/product" element={<ProductPage />} />
 				<Route path="/use-cases" element={<UseCasesPage />} />
-				<Route path="/why-we-built-this" element={<WhyWeBuiltThisPage />} />
 				<Route path="/team" element={<TeamPage />} />
 				<Route path="/contact" element={<ContactPage />} />
 			</Routes>

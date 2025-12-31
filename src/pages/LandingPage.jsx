@@ -5,14 +5,6 @@ import { Link } from "react-router-dom";
 const LandingPage = () => {
 	const { colors } = useTheme();
 
-	// Logo carousel - placeholder for now, should be replaced with actual company logos
-	const companyLogos = [
-		{ name: "Company 1", logo: "🏢" }, // Replace with actual logos
-		{ name: "Company 2", logo: "🏥" },
-		{ name: "Company 3", logo: "🏛️" },
-		{ name: "Company 4", logo: "🏘️" },
-	];
-
 	const mainModules = [
 		{
 			title: "Falls Analysis",
@@ -57,31 +49,6 @@ const LandingPage = () => {
 
 	return (
 		<div className="min-h-screen">
-			{/* Logo Carousel */}
-			<section className="px-4 py-8 md:px-8 md:py-12">
-				<div className="mx-auto max-w-6xl">
-					<div className="mb-6 text-center">
-						<p className="text-sm font-semibold uppercase tracking-wide" style={{ color: colors.textMuted }}>
-							Trusted by Leading Care Facilities
-						</p>
-					</div>
-					<div className="flex items-center justify-center gap-8 overflow-hidden">
-						{companyLogos.map((company, index) => (
-							<div
-								key={index}
-								className="flex h-16 w-32 shrink-0 items-center justify-center rounded-lg border transition-all duration-300 hover:scale-110"
-								style={{
-									borderColor: colors.borderLight,
-									backgroundColor: hexToRgba(colors.surface, 0.5),
-								}}
-							>
-								<span className="text-3xl">{company.logo}</span>
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
-
 			{/* Above the fold */}
 			<section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-20">
 				<div className="relative z-10 mx-auto w-full max-w-5xl text-center">

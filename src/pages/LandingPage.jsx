@@ -137,16 +137,16 @@ const LandingPage = () => {
 			<section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-20">
 				<div className="relative z-10 mx-auto w-full max-w-5xl text-center">
 					<h1
-						className="animate-on-scroll mb-6 text-5xl font-extrabold leading-tight tracking-tight md:mb-8 md:text-6xl lg:text-7xl"
+						className="animate-on-scroll mb-6 text-4xl font-extrabold leading-tight tracking-tight md:mb-8 md:text-5xl lg:text-6xl"
 						style={{ color: colors.text }}
 					>
-						Ascenix is an AI-powered incident analysis platform for senior care operators.
+						AI-powered incident analysis for senior care
 					</h1>
 					<p
-						className="animate-on-scroll mb-8 text-xl leading-relaxed md:mb-12 md:text-2xl lg:text-3xl"
+						className="animate-on-scroll mb-8 text-lg leading-relaxed md:mb-12 md:text-xl lg:text-2xl"
 						style={{ animationDelay: "0.2s", color: colors.textSecondary }}
 					>
-						We turn raw incident data into clear, actionable insight that reduces risk, injuries, and operational blind spots.
+						Turn incident data into actionable insights that reduce risk and operational blind spots.
 					</p>
 					<div className="animate-on-scroll" style={{ animationDelay: "0.4s" }}>
 						<Link

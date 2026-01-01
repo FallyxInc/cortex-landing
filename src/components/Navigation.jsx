@@ -48,11 +48,11 @@ const Navigation = () => {
 						className={`link-hover font-medium tracking-wide uppercase transition-all duration-500 ease-in-out hover:scale-110 ${
 							isScrolled ? "text-xs sm:text-sm" : "text-sm sm:text-base"
 						} ${isActive(item.path) ? "font-bold" : ""}`}
-						style={{ 
-							transitionProperty: "font-size, color, transform",
+					style={{ 
+						transitionProperty: "font-size, color, transform",
 							color: isActive(item.path) ? colors.primary : colors.textSecondary
-						}}
-					>
+					}}
+				>
 						{item.label}
 					</Link>
 				))}
